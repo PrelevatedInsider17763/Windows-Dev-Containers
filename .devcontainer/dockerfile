@@ -1,0 +1,19 @@
+# Use the Windows Server Core image
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
+
+# Install Chocolatey
+RUN powershell.exe -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
+
+# Install Visual Studio 2019 Build Tools
+RUN choco install -y visualstudio2019buildtools
+
+# Install Python 2 and Python 3.11
+RUN choco install -y python2 python3 --version=3.11.0
+
+# Install Node.js Long Term Support
+RUN choco install -y nodejs-lts
+
+# Other configurations or installations go here
+
+# Set the default command to PowerShell
+CMD ["powershell"]
