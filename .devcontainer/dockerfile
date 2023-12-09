@@ -1,5 +1,7 @@
 # Use the Windows Server Core image
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
+ARG PLATFORM
+FROM --platform=$PLATFORM mcr.microsoft.com/windows/servercore:ltsc2019 AS builder
+
 
 # Install Chocolatey
 RUN powershell.exe -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
