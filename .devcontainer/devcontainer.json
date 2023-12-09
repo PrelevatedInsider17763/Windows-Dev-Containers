@@ -4,6 +4,9 @@
   "settings": {
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
   },
+  "buildArgs": {
+    "PLATFORM": "linux/amd64"  // Specify the desired platform during the build
+  },
   "runArgs": [
     "-it",
     "--isolation", "process",
